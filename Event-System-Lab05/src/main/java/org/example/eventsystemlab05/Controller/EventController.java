@@ -20,6 +20,7 @@ public class EventController {
 
 @PostMapping("/add")
     public ApiResponse addEvents(@RequestBody Event event){
+         event.setStartDate(LocalDate.now());
         events.add(event);
         return  new ApiResponse("Event is added successfully");
     }
@@ -73,3 +74,4 @@ public  ApiResponse searchEvent(@PathVariable int id){
 
 
 }
+
